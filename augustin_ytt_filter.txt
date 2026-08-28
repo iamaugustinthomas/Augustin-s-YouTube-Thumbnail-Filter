@@ -1,24 +1,18 @@
 ! Title: Augustine YouTube Thumbnail Filter
 ! Description: A "filterless filter" that completely removes YouTube thumbnails and collapses the grid into a pure text list.
-! Version: 1.1
+! Version: 1.2
 ! Expires: 7 days
 
-! 1. Completely hide all thumbnail wrappers, images, and Shorts thumbnails
+! 1. Block any image served from ytimg.com (covers thumbnails, previews, Shorts)
+||i.ytimg.com^$image
+
+! 2. Collapse empty containers so text flows without gaps
 youtube.com##ytd-thumbnail
 youtube.com##ytd-playlist-thumbnail
 youtube.com##a#thumbnail
 youtube.com##yt-image
-
-! 2. Remove skeleton loaders and empty placeholders
-youtube.com###ghost-cards
-youtube.com##ytd-ghost-grid-renderer
-
-! 3. Force the Home Page grid to become a vertical list and remove empty spacing
-youtube.com##ytd-rich-grid-row:style(display: block !important;)
-youtube.com##ytd-rich-grid-row > #contents:style(display: block !important; margin: 0 !important;)
-youtube.com##ytd-rich-item-renderer:style(margin-bottom: 16px !important; width: 100% !important; margin-left: 0 !important;)
-youtube.com##ytd-rich-grid-media:style(max-width: 100% !important; margin: 0 !important;)
-
-! 4. Fix Search Results and Sidebar spacing so text stretches to fill the gap
-youtube.com##ytd-video-renderer .text-wrapper:style(max-width: 100% !important; margin: 0 !important; padding-left: 0 !important;)
+youtube.com##ytd-rich-grid-media #thumbnail
+youtube.com##ytd-video-renderer #thumbnail
+youtube.com##ytd-compact-video-renderer #thumbnail
+margin: 0 !important; padding-left: 0 !important;)
 youtube.com##ytd-compact-video-renderer:style(margin-bottom: 12px !important;)
