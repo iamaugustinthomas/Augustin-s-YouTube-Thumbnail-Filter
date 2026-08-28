@@ -1,0 +1,16 @@
+! Title: Augustine YouTube Thumbnail Filter
+! Description: A "filterless filter" that completely removes YouTube thumbnails and their spacing for a pure, text-only feed.
+! Version: 1.0
+! Expires: 7 days
+
+! Hide main video thumbnails globally (home, search, sidebar)
+youtube.com##ytd-thumbnail
+
+! Hide Shorts thumbnails
+youtube.com##ytd-reel-item-renderer ytd-thumbnail
+
+! Remove the large skeleton loading placeholders that mimic thumbnails
+youtube.com###ghost-cards
+
+! Tighten the gap between videos so it looks like a clean text list
+youtube.com##ytd-rich-item-renderer:style(margin-bottom: 12px !important;)
