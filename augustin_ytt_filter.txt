@@ -1,16 +1,24 @@
 ! Title: Augustine YouTube Thumbnail Filter
-! Description: A "filterless filter" that completely removes YouTube thumbnails and their spacing for a pure, text-only feed.
-! Version: 1.0
+! Description: A "filterless filter" that completely removes YouTube thumbnails and collapses the grid into a pure text list.
+! Version: 1.1
 ! Expires: 7 days
 
-! Hide main video thumbnails globally (home, search, sidebar)
+! 1. Completely hide all thumbnail wrappers, images, and Shorts thumbnails
 youtube.com##ytd-thumbnail
+youtube.com##ytd-playlist-thumbnail
+youtube.com##a#thumbnail
+youtube.com##yt-image
 
-! Hide Shorts thumbnails
-youtube.com##ytd-reel-item-renderer ytd-thumbnail
-
-! Remove the large skeleton loading placeholders that mimic thumbnails
+! 2. Remove skeleton loaders and empty placeholders
 youtube.com###ghost-cards
+youtube.com##ytd-ghost-grid-renderer
 
-! Tighten the gap between videos so it looks like a clean text list
-youtube.com##ytd-rich-item-renderer:style(margin-bottom: 12px !important;)
+! 3. Force the Home Page grid to become a vertical list and remove empty spacing
+youtube.com##ytd-rich-grid-row:style(display: block !important;)
+youtube.com##ytd-rich-grid-row > #contents:style(display: block !important; margin: 0 !important;)
+youtube.com##ytd-rich-item-renderer:style(margin-bottom: 16px !important; width: 100% !important; margin-left: 0 !important;)
+youtube.com##ytd-rich-grid-media:style(max-width: 100% !important; margin: 0 !important;)
+
+! 4. Fix Search Results and Sidebar spacing so text stretches to fill the gap
+youtube.com##ytd-video-renderer .text-wrapper:style(max-width: 100% !important; margin: 0 !important; padding-left: 0 !important;)
+youtube.com##ytd-compact-video-renderer:style(margin-bottom: 12px !important;)
