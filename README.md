@@ -12,7 +12,7 @@ A "filterless filter" designed to unlock a distraction-free YouTube experience u
 2. Go to the Filter lists tab.
 3. Scroll to the very bottom and check the box for Import...
 4. Paste the raw URL of the filter list:
-   `https://raw.githubusercontent.com/[YOUR_USERNAME]/augustine-yt-thumbnail-filter/main/augustine-filter.txt`
+   `https://raw.githubusercontent.com/iamaugustinthomas/Augustin-s-YouTube-Thumbnail-Filter/refs/heads/main/augustin_ytt_filter.txt`
 5. Click Apply changes in the top left.
 
 ## How to Install (Manual Paste)
